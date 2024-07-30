@@ -1,9 +1,8 @@
 import React from 'react';
-import PropTypes, { checkPropTypes } from 'prop-types';
+import PropTypes from 'prop-types';
 // import CalculateSize from './utilities';
 import InnerShadowBox from './InnerShadowBox';
 import OuterShadowBox from './OuterShadowBox';
-// import { ShadowBoxProps, ShadowBoxTypes } from './Types';
 
 export default class ShadowBox extends React.PureComponent {
   calculateSize = (style, parentSize) => {
@@ -15,7 +14,7 @@ export default class ShadowBox extends React.PureComponent {
       };
       return styleValue;
     };
-  
+
     const newStyle = {
       width: calculateValue(style.width, parentSize.width),
       height: calculateValue(style.height, parentSize.height),
@@ -28,8 +27,8 @@ export default class ShadowBox extends React.PureComponent {
       shadowOpacity: calculateValue(style.shadowOpacity, 1),
       opacity: calculateValue(style.opacity, 1)
     };
-  
-    return Object.assign(style, newStyle);
+
+    return Object.assign(style, newStyle)
   };
 
   render() {
@@ -49,7 +48,7 @@ ShadowBox.defaultProps = {
   useSvg: false
 };
 ShadowBox.propTypes = {
-  inner: checkPropTypes.bool,
+  inner: PropTypes.bool,
   useSvg: PropTypes.bool,
   children: PropTypes.node,
   style: PropTypes.shape({
@@ -70,5 +69,3 @@ ShadowBox.propTypes = {
     backgroundColor: PropTypes.string,
   }),
 };
-// ShadowBox.defaultProps = ShadowBoxProps;
-// ShadowBox.propTypes = ShadowBoxTypes;
