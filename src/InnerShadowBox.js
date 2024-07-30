@@ -1,8 +1,8 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
+import {View} from 'react-native';
 import InnerShadowSvg from './InnerShadowSvg';
-// import { InnerShadowProps, InnerShadowTypes } from './Types';
 
 export default class InnerShadowBox extends React.PureComponent {
   constructor(props) {
@@ -104,5 +104,3 @@ InnerShadowBox.propTypes = {
     backgroundColor: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   }),
 };
-// InnerShadowBox.defaultProps = InnerShadowProps;
-// InnerShadowBox.propTypes = InnerShadowTypes;
