@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// import CalculateSize from './utilities';
 import InnerShadowBox from './InnerShadowBox';
 import OuterShadowBox from './OuterShadowBox';
 
