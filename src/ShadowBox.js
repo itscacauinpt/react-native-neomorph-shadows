@@ -1,14 +1,40 @@
 import React from 'react';
 import PropTypes, { checkPropTypes } from 'prop-types';
-import CalculateSize from './utilities';
+// import CalculateSize from './utilities';
 import InnerShadowBox from './InnerShadowBox';
 import OuterShadowBox from './OuterShadowBox';
 // import { ShadowBoxProps, ShadowBoxTypes } from './Types';
 
 export default class ShadowBox extends React.PureComponent {
+  calculateSize = (style, parentSize) => {
+    const calculateValue = (styleValue, baseValue) => {
+      if (typeof styleValue === "string" && styleValue.endsWith("%")) {
+        // some atributtes are multiplied by the parentSize (width and height), so it can "fit" in the parent's container
+        // and others, due to their values range being from 0 to 1, are multiplied by 1, the only change is the division by 100
+        return (parseFloat(styleValue)/100 * baseValue);
+      };
+      return styleValue;
+    };
+  
+    const newStyle = {
+      width: calculateValue(style.width, parentSize.width),
+      height: calculateValue(style.height, parentSize.height),
+      shadowOffset: {
+        width: calculateValue(style.shadowOffset.width, parentSize.width),
+        height: calculateValue(style.shadowOffset.height, parentSize.height),
+      },
+      borderRadius: calculateValue(style.borderRadius, Math.min(parentSize.width, parentSize.height)),
+      shadowRadius: calculateValue(style.shadowRadius, Math.min(parentSize.width, parentSize.height)),
+      shadowOpacity: calculateValue(style.shadowOpacity, 1),
+      opacity: calculateValue(style.opacity, 1)
+    };
+  
+    return Object.assign(style, newStyle);
+  };
+
   render() {
     const { children, baseStyle, parentSize, ...props } = this.props;
-    const calculatedStyle = CalculateSize(baseStyle, parentSize);
+    const calculatedStyle = this.calculateSize(baseStyle, parentSize);
     
     return props.inner ? (
       <InnerShadowBox {...props} style={calculatedStyle}>{children}</InnerShadowBox>
