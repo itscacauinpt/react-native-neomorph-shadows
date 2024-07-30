@@ -1,14 +1,10 @@
 {
   "name": "react-native-neomorph-shadows",
-  "version": "1.1.2",
-  "description": "Shadows and neumorphism/neomorphism UI for iOS & Android (like iOS).",
+  "version": "0.0.8",
+  "description": "Neumorphism UI shadows for iOS & Android, include SVG inner/outer shadow component powered with react-native-svg, which can provide shadow on Android identical like iOS",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "@react-native-community/art": "^1.2.0",
-    "prop-types": "^15.7.2"
   },
   "repository": {
     "type": "git",
@@ -45,10 +41,5 @@
   "bugs": {
     "url": "https://github.com/tokkozhin/react-native-neomorph-shadows/issues"
   },
-  "homepage": "https://github.com/tokkozhin/react-native-neomorph-shadows#readme",
-  "devDependencies": {
-    "@types/react": "^16.9.34",
-    "@types/react-native": "^0.62.7"
-  },
-  "types": "index.d.ts"
+  "homepage": "https://github.com/tokkozhin/react-native-neomorph-shadows#readme"
 }
