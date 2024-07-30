@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tokkozhin/react-native-neomorph-shadows.git"
+    "url": "git+https://github.com/itscacauinpt/react-native-neomorph-shadows.git"
   },
   "keywords": [
     "react-native",
@@ -39,7 +39,7 @@
   "author": "Daniel Tokkozhin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tokkozhin/react-native-neomorph-shadows/issues"
+    "url": "https://github.com/itscacauinpt/react-native-neomorph-shadows/issues"
   },
-  "homepage": "https://github.com/tokkozhin/react-native-neomorph-shadows#readme"
+  "homepage": "https://github.com/itscacauinpt/react-native-neomorph-shadows#readme"
 }
